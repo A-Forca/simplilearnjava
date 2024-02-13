@@ -14,8 +14,12 @@
 -- Run the SQL Queries to perform insert, update, delete and query on the related tables
 
 -- Create a database in MySQL
-CREATE DATABASE architectural_firm;
+-- CREATE DATABASE architectural_firm;
 USE architectural_firm;
+
+
+DROP TABLE IF EXISTS Client_Meetings;
+DROP TABLE IF EXISTS Clients;
 
 -- Using SQL Statements Create a Table for Client
 CREATE TABLE Clients(
@@ -25,6 +29,16 @@ CREATE TABLE Clients(
     email VARCHAR(50),
     PRIMARY KEY(id)
 );
+
+-- create client data
+
+INSERT INTO Clients (first_name, last_name, email) VALUES
+('Alex', 'Johnson', 'alex.johnson@example.com'),
+('Samantha', 'Doe', 'samantha.doe@example.com'),
+('Raj', 'Patel', 'raj.patel@example.com'),
+('Liu', 'Wen', 'liu.wen@example.com'),
+('Maria', 'Garcia', 'maria.garcia@example.com');
+
 
 -- Using SQL Statements Create a Table for Client Meetings
 CREATE TABLE Client_Meetings(
@@ -39,7 +53,16 @@ CREATE TABLE Client_Meetings(
     FOREIGN KEY(client_id) REFERENCES Clients(id)
 );
 
-SHOW 
+-- create client meeting data
+INSERT INTO Client_Meetings (client_id, meeting_date, meeting_time, location, purpose, notes) VALUES
+(1, '2024-03-15', '10:00:00', 'Main Office', 'Initial Project Consultation', 'Discuss project scope and requirements.'),
+(2, '2024-03-16', '13:00:00', 'Downtown Branch', 'Design Review', 'Review initial design drafts and provide feedback.'),
+(3, '2024-03-17', '15:30:00', 'Raj Patel Office', 'Budget Meeting', 'Finalize project budget and payment schedule.'),
+(4, '2024-03-18', '11:00:00', 'Liu Wen Design Studio', 'Material Selection', 'Select materials for the interior design.'),
+(5, '2024-03-19', '09:30:00', 'Maria Garcia Home', 'Site Visit', 'Assess the site and take necessary measurements.');
+
+
+SHOW tables;
 
 SELECT 
     Client_Meetings.meeting_date,
@@ -53,5 +76,4 @@ JOIN
     Clients
 ON 
     Client_Meetings.client_id = Clients.id
-WHERE 
-    Clients.first_name = 'John' AND Clients.last_name = 'Doe';
+
