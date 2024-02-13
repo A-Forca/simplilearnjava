@@ -47,9 +47,6 @@ drop table if exists Customer;  -- remove any existing copy of the Customer tabl
 drop table if exists User;      -- remove any existing copy of the User table
 drop table if exists Product;   -- remove any existing copy of the Product table
 
-drop table if exists Customer;  
-drop table if exists User;      
-drop table if exists Product;
 
 create table User (
     uid     int PRIMARY KEY AUTO_INCREMENT, -- have the DBMS automatically generate a uid value
@@ -58,12 +55,6 @@ create table User (
     email   varchar(256) NOT NULL UNIQUE
 );
 
-create table User (
-    uid     int PRIMARY KEY AUTO_INCREMENT,
-    name    varchar(256) NOT NULL,
-    phone   varchar(256),
-    email   varchar(256) NOT NULL UNIQUE
-);
 show tables;
 describe User;
 
