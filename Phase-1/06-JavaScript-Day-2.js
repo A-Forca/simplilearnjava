@@ -21,13 +21,13 @@ printParameters(1, 12345)
 // the /n character causes the display to go to a new line (used for output line spacing)
 
 console.log('\n----- compare a string value 1 to a numeric value 1 -----\n')
-equality('1',1)  
+equality('1', 1)
 
 console.log('\n----- compare two strings that sound the same -----\n')
-equality('two', 'too') 
+equality('two', 'too')
 
 console.log('\n ----- compare a whole number value 1 to a decimal value 1 -----\n')
-equality(1, 1.0);   
+equality(1, 1.0);
 
 console.log('\n ----- call falsy with various values -----\n')
 
@@ -41,7 +41,7 @@ falsy(3.14)
 console.log('\n ----- call objects -----\n')
 objects() // call the objects function
 
-console.log('\n\nThanks for using our app!\n' )
+console.log('\n\nThanks for using our app!\n')
 
 //********************************************************************************************
 // End of main application processing
@@ -96,25 +96,25 @@ function variables() {
 
   daysInYear = 365; // change the value in a variable
   console.log(`There are ${daysInYear} in 2025`);
- 
+
   // Declares a variable that will always be an array
   // To declare an array in JavaScript code name = []
 
   let monthsOfYear = ["January",
-                      "February",
-                      "March",
-                      "April",
-                      "May",
-                      "June",
-                      "July",
-                      "August",
-                      "September",
-                      "October",
-                      "November",
-                      "December"
-                    ]
-   console.log(`${monthsOfYear}`)
-   console.table(monthsOfYear)    // Display an array in table format - note no `` or ${}
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ]
+  console.log(`${monthsOfYear}`)
+  console.table(monthsOfYear)    // Display an array in table format - note no `` or ${}
 
 
 
@@ -205,20 +205,57 @@ function objects() {
   console.log('-'.repeat(50));
 
   // Define an object
-  let contactInfo  = {  // define an object called contact
-                      firstName : "Frank",
-                      lastName  : "Fella",
-                      city: "Phoenix"
-                     }
+  let contactInfo = {  // define an object called contact
+    firstName: "Frank",
+    lastName: "Fella",
+    city: "Phoenix",
+    favorites: [
+      {
+        sport: 'football',
+        favoriteTeam: 'eagles'
+      },
+      {
+        sport: 'hockey',
+        favoriteTeam: 'islanders'
+      },
+      {
+        sport: 'baseball',
+        favoriteTeam: 'Yankees'
+      }
+    ]
+  }
 
   // Log the entire  object
   console.log(contactInfo)  // because it is a group of values, no `` and no ${}
   console.table(contactInfo)
 
   // Log individual elements/properties of  the object
- 
+  console.log(`First name is ${contactInfo.firstName}`)
+  console.log(`favorite football team is ${contactInfo.favorites[0].favoriteTeam}`);
+  for (let i = 0; i < contactInfo.favorites.length; i++) {
+    console.log(contactInfo.favorites[i]);
+  }
+
+  function numberFunc() {
+    let numbers = [1, 2, 3, 4, 5, 6];
+    let sum = 0
+    for (let i = 0; i < numbers.length; i++) {
+      sum = sum + numbers[i]
+    }
+    let avg = sum / numbers.length;
+
+    for (num of numbers) {
+      console.log(num);
+    }
+    return `the sum is ${sum}, and the avg of all the numbers is ${avg}`;
+
+  };
+
+  console.log(numberFunc());
+
+
   // Log each element of an array in an object 
-  
+
   // Define a method to be used with an object
 
 }
@@ -289,9 +326,9 @@ function stringFunctions(value) {
   console.log(`.endsWith('World') - ${value.endsWith("World")}`);
   console.log(`.startsWith('Hello') - ${value.startsWith("Hello")}`);
   console.log(`.indexOf('Hello') - ${value.indexOf("Hello")}`);  // index of where the word starts in the string
-  console.log(`.substr(2,3) - ${value.substr(2,3)}`)             // .substr(start-index, length)
-  console.log(`.substring(2,3) - ${value.substring(2,3)}`)       // .substring(start-index, end-index)
-                                                                 //     up to, but including the char at end-index
+  console.log(`.substr(2,3) - ${value.substr(2, 3)}`)             // .substr(start-index, length)
+  console.log(`.substring(2,3) - ${value.substring(2, 3)}`)       // .substring(start-index, end-index)
+  //     up to, but including the char at end-index
 
   /*
     Other Methods
@@ -321,39 +358,39 @@ function arrayFunctions() {
   // Display the array as a table
 
   // Add an element to end of the array
-  
+
   // Display the array as a table
 
   // Add an element to start of the array
-  
+
   // Display the array as a table
 
   // Remove 0 elements and insert new elements at index 3
-  
+
   // Display the array as a table
 
   // Remove the element at index 3
-  
+
   // Display the array as a table
-  
+
   // Remove two elements at index 3
-  
+
   // Display the array as a table
 
   // Remove one element at the start of the array (shift elements up 1 position)
-  
+
   // Display the array as a table
 
   // Remove the last element from the array
-  
+
   // Display the array as a table
 
- // Find index of "Larry" and remove the element at that index
- 
- // Display the array as a table
-  
- // Define a new array
+  // Find index of "Larry" and remove the element at that index
 
- // combine the stooges array and marxBros array into one
- 
+  // Display the array as a table
+
+  // Define a new array
+
+  // combine the stooges array and marxBros array into one
+
 } 
