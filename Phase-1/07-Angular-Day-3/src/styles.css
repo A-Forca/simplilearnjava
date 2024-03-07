@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 html {
-    background-image: linear-gradient(lightyellow, khaki);
     height: 100%;
-    color: blue;
+    color: green;
+    background-color: black;
+
+}
+
+select>option {
+    color: rgb(13, 98, 3);
+    background-color: aqua;
 }
