@@ -15,7 +15,13 @@ const objects = [
 // Write a function that uses a for...of loop to iterate over an array of numbers and returns their sum.
 function sumNumbers(numbers) {
     // Your code here
+    let sum = 0;
+    for (num of numbers) {
+      sum += num;
+    }
+    return sum;
   }
+  console.log(sumNumbers(numbers));
   
   // Question 2
   // Write a function that uses a for...in loop to iterate over an object and returns an array of its keys.
